@@ -7,7 +7,7 @@ public class Frontend {
     JButton saveCatalog;
     JButton loadCatalog;
 
-    public void makeFrane() {
+    public void makeFrame() {
 
         frame = new JFrame();
         frame.setSize(500, 200);

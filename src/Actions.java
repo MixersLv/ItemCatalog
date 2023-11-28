@@ -8,6 +8,10 @@ public class Actions implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        frontend.makeItem.addActionListener(this);
+        frontend.saveCatalog.addActionListener(this);
+        frontend.loadCatalog.addActionListener(this);
+
         if (e.getSource() == frontend.makeItem){
             logic.makeItem();
         }

@@ -1,10 +1,12 @@
 public class Logic {
     private Frontend frontend = new Frontend();
     public void run(){
-        frontend.makeFrane();
+        frontend.makeFrame();
     }
 
-    public void makeItem(){}
+    public void makeItem(){
+        System.out.println("i WORK");
+    }
     public void saveCatalog(){}
     public void loadCatalog(){}
 
