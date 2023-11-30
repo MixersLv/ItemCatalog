@@ -1,3 +1,5 @@
+import java.awt.event.ActionListener;
+
 public class Logic {
     private Frontend frontend = new Frontend();
     public void run(){
@@ -5,10 +7,14 @@ public class Logic {
     }
 
     public void makeItem(){
-        System.out.println("i WORK");
+        System.out.println("MAKE");
     }
-    public void saveCatalog(){}
-    public void loadCatalog(){}
+    public void saveCatalog(){
+        System.out.println("SAVE");
+    }
+    public void loadCatalog(){
+        System.out.println("LOAD");
+    }
 
 
 
