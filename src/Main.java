@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-      Logic logic = new Logic();
+        Logic logic = new Logic();
+        logic.run();
 
-      logic.run();
+        Frontend frontend = new Frontend();
+        frontend.makeFrame();
+        frontend.makeCatalogFrame();
 
     }
 

@@ -1,0 +1,2 @@
+toyota.car=100
+car.vehicle=200

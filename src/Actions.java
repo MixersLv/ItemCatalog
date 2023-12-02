@@ -9,15 +9,5 @@ public class Actions implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource()==frontend.makeItem){
-            logic.makeItem();
-        }
-        if (e.getSource()==frontend.saveCatalog){
-            logic.saveCatalog();
-        }
-        if (e.getSource()==frontend.loadCatalog){
-            logic.loadCatalog();
-        }
-
     }
 }
