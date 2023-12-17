@@ -1,6 +1,6 @@
+package catalog;
+
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.Scanner;
 
 public class Main {
 
@@ -8,9 +8,9 @@ public class Main {
         Logic logic = new Logic();
         logic.run();
 
-        Frontend frontend = new Frontend();
-        frontend.makeFrame();
+        Frontend frontend = new Frontend(logic);
         frontend.makeCatalogFrame();
+        frontend.makeFrame();
 
     }
 
