@@ -64,10 +64,6 @@ public class Logic {
         items.add(newItem);
     }
 
-    public void loadCatalog() throws IOException {
-        readCatalog();
-    }
-
     public List<CatalogItem> getItems() {
         return items;
     }

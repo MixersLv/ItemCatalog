@@ -6,12 +6,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Logic logic = new Logic();
-        logic.run();
-
         Frontend frontend = new Frontend(logic);
+
+        logic.run();
         frontend.makeCatalogFrame();
         frontend.makeFrame();
-
     }
-
 }

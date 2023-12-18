@@ -1,2 +1,6 @@
 toyota.car=100
 car.vehicle=200
+cheese.food=10
+car.toy=10
+lol.word=100
+poop.fecies=1

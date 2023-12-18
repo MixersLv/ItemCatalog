@@ -13,12 +13,12 @@ public class Frontend {
     JButton makeItem;
     JButton saveCatalog;
     JButton loadCatalog;
+    JFrame makeItemGUI;
     //Bob
     Logic logicClass;
 
     public Frontend(Logic logicClass) {
     this.logicClass = logicClass;
-
     }
 
     public void makeFrame() {
@@ -40,16 +40,20 @@ public class Frontend {
         catalogframe.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         catalogframe.setSize(300, 600);
         catalogframe.setBackground(Color.gray);
-        catalogframe.setLayout(new FlowLayout());
-
+        catalogframe.setLayout(new BoxLayout(catalogframe.getContentPane(), BoxLayout.Y_AXIS));
     }
 
+    public void makeCatalogManagerFrame(){
+        makeItemGUI.setSize(400,200);
+        makeItemGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        makeItemGUI.setTitle("Catalog Manager");
+    }
 
     public void makeButtons() {
         MakeItemAction makeNewItemButtonListener = new MakeItemAction(logicClass);
         SaveCatalogAction saveCatalogListener = new SaveCatalogAction(logicClass);
         LoadCatalogAction loadCatalogListener = new LoadCatalogAction(logicClass, catalogframe);
-        makeItem = new JButton("Make Item");
+        makeItem = new JButton("Catalog Manager");
         saveCatalog = new JButton("Save Catalog");
         loadCatalog = new JButton("Load Catalog");
         makeItem.addActionListener(makeNewItemButtonListener);
