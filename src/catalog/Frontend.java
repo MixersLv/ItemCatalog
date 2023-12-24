@@ -1,7 +1,8 @@
 package catalog;
 
+import catalog.listeners.CatalogManagerAction;
 import catalog.listeners.LoadCatalogAction;
-import catalog.listeners.MakeItemAction;
+import catalog.listeners.ItemManagerAction;
 import catalog.listeners.SaveCatalogAction;
 
 import javax.swing.*;
@@ -13,8 +14,10 @@ public class Frontend {
     JButton makeItem;
     JButton saveCatalog;
     JButton loadCatalog;
-    JFrame makeItemGUI;
-    //Bob
+    JFrame itemGUI;
+    JButton makeItemButton;
+    JButton saveItemButton;
+    JButton deleteItemButton;
     Logic logicClass;
 
     public Frontend(Logic logicClass) {
@@ -44,13 +47,37 @@ public class Frontend {
     }
 
     public void makeCatalogManagerFrame(){
-        makeItemGUI.setSize(400,200);
-        makeItemGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        makeItemGUI.setTitle("Catalog Manager");
+        itemGUI = new JFrame();
+        itemGUI.setSize(400,200);
+        itemGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        itemGUI.setTitle("Catalog Manager");
+        itemGUI.setLocationRelativeTo(null);
+        itemGUI.setLayout(new FlowLayout());
+        makeCatalogManagerButtons();
+    }
+    public void makeCatalogManagerButtons(){
+        makeItemButton = new JButton("Make Item");
+        saveItemButton = new JButton("Save Item");
+        deleteItemButton = new JButton("Delete item");
+        //Make listener object for each button
+        CatalogManagerAction makeItemListener = new CatalogManagerAction(logicClass);
+        CatalogManagerAction saveItemListener =  new CatalogManagerAction(logicClass);
+        CatalogManagerAction deleteItemListener = new CatalogManagerAction(logicClass);
+        //add acion listener to each button
+        makeItemButton.addActionListener(makeItemListener);
+        saveItemButton.addActionListener(saveItemListener);
+        deleteItemButton.addActionListener(deleteItemListener);
+        //add buttons to manager frame
+        itemGUI.add(makeItemButton);
+        itemGUI.add(saveItemButton);
+        itemGUI.add(deleteItemButton);
+    }
+    public void initItemManager(){
+        itemGUI.setVisible(true);
     }
 
     public void makeButtons() {
-        MakeItemAction makeNewItemButtonListener = new MakeItemAction(logicClass);
+        ItemManagerAction makeNewItemButtonListener = new ItemManagerAction(logicClass);
         SaveCatalogAction saveCatalogListener = new SaveCatalogAction(logicClass);
         LoadCatalogAction loadCatalogListener = new LoadCatalogAction(logicClass, catalogframe);
         makeItem = new JButton("Catalog Manager");

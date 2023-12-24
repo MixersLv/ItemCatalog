@@ -22,5 +22,4 @@ public class SaveCatalogAction implements ActionListener {
         }
     }
 
-
 }

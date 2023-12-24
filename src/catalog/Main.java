@@ -10,6 +10,7 @@ public class Main {
 
         logic.run();
         frontend.makeCatalogFrame();
+        frontend.makeCatalogManagerFrame();
         frontend.makeFrame();
     }
 }
