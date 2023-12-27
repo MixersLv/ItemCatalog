@@ -7,8 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DeleteItemAction implements ActionListener {
-    Logic logicClass;
-    Frontend frontendClass;
+    private final Logic logicClass;
+    private final Frontend frontendClass;
 
     public DeleteItemAction(Logic logicClass, Frontend frontendClass) {
         this.logicClass = logicClass;

@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class SaveItemAction implements ActionListener {
-    Logic logicClass;
-    Frontend frontendClass;
+    private final Logic logicClass;
+    private final Frontend frontendClass;
 
     public SaveItemAction(Logic logicClass, Frontend frontendClass) {
         this.logicClass = logicClass;

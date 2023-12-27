@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MakeItemAction implements ActionListener {
-    Logic logicClass;
+    private final Logic logicClass;
 
     public MakeItemAction(Logic logicClass) {
         this.logicClass = logicClass;

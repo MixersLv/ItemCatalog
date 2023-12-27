@@ -6,16 +6,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Frontend {
-    JFrame frame;
-    JFrame catalogframe;
-    JButton catalogManager;
-    JButton saveCatalog;
-    JButton loadCatalog;
-    JFrame itemGUI;
-    JButton makeItemButton;
-    JButton saveItemButton;
-    JButton deleteItemButton;
-    Logic logicClass;
+    private JFrame frame;
+    private JFrame catalogframe;
+    private JButton catalogManager;
+    private JButton saveCatalog;
+    private JButton loadCatalog;
+    private JFrame itemGUI;
+    private JButton makeItemButton;
+    private JButton saveItemButton;
+    private JButton deleteItemButton;
+    private final Logic logicClass;
 
     public Frontend(Logic logicClass) {
     this.logicClass = logicClass;
