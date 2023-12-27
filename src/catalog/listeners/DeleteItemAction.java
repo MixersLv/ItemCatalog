@@ -6,15 +6,17 @@ import catalog.Logic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ItemManagerAction implements ActionListener {
-    private final Frontend frontendClass;
+public class DeleteItemAction implements ActionListener {
+    Logic logicClass;
+    Frontend frontendClass;
 
-    public ItemManagerAction(Frontend frontendClass) {
+    public DeleteItemAction(Logic logicClass, Frontend frontendClass) {
+        this.logicClass = logicClass;
         this.frontendClass = frontendClass;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        frontendClass.initItemManager();
+        logicClass.deleteItem();
     }
 }

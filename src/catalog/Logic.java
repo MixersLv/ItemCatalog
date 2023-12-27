@@ -63,10 +63,9 @@ public class Logic {
         CatalogItem newItem = new CatalogItem(itemName, itemType, itemPrice);
         items.add(newItem);
     }
-    public void runItemManager(){
-
+    public void deleteItem(){
+        System.out.println("DELETE YOURSELF INSTEAD!");
     }
-
     public List<CatalogItem> getItems() {
         return items;
     }

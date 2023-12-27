@@ -6,3 +6,5 @@ lol.word=100
 poop.fecies=1
 sex.lol=10
 lol.sex=200
+bruh.bruh=9
+lol.wow=1

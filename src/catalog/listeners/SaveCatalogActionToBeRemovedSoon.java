@@ -6,10 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class SaveCatalogAction implements ActionListener {
+public class SaveCatalogActionToBeRemovedSoon implements ActionListener {
 
     private final Logic logicClass;
-    public SaveCatalogAction(Logic logicClass) {
+    public SaveCatalogActionToBeRemovedSoon(Logic logicClass) {
         this.logicClass = logicClass;
     }
 

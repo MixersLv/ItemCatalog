@@ -1,9 +1,6 @@
 package catalog;
 
-import catalog.listeners.CatalogManagerAction;
-import catalog.listeners.LoadCatalogAction;
-import catalog.listeners.ItemManagerAction;
-import catalog.listeners.SaveCatalogAction;
+import catalog.listeners.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +8,7 @@ import java.awt.*;
 public class Frontend {
     JFrame frame;
     JFrame catalogframe;
-    JButton makeItem;
+    JButton catalogManager;
     JButton saveCatalog;
     JButton loadCatalog;
     JFrame itemGUI;
@@ -31,7 +28,7 @@ public class Frontend {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLayout(new GridLayout(1, 1, 1, 1));
-        frame.add(makeItem);
+        frame.add(catalogManager);
         frame.add(saveCatalog);
         frame.add(loadCatalog);
         frame.setVisible(true);
@@ -60,9 +57,9 @@ public class Frontend {
         saveItemButton = new JButton("Save Item");
         deleteItemButton = new JButton("Delete item");
         //Make listener object for each button
-        CatalogManagerAction makeItemListener = new CatalogManagerAction(logicClass);
-        CatalogManagerAction saveItemListener =  new CatalogManagerAction(logicClass);
-        CatalogManagerAction deleteItemListener = new CatalogManagerAction(logicClass);
+        MakeItemAction makeItemListener = new MakeItemAction(logicClass);
+        SaveItemAction saveItemListener =new SaveItemAction(logicClass,this);
+        DeleteItemAction deleteItemListener = new DeleteItemAction(logicClass,this);
         //add acion listener to each button
         makeItemButton.addActionListener(makeItemListener);
         saveItemButton.addActionListener(saveItemListener);
@@ -77,13 +74,13 @@ public class Frontend {
     }
 
     public void makeButtons() {
-        ItemManagerAction makeNewItemButtonListener = new ItemManagerAction(logicClass);
-        SaveCatalogAction saveCatalogListener = new SaveCatalogAction(logicClass);
+        ItemManagerAction itemManagerListener = new ItemManagerAction(this);
+        SaveCatalogActionToBeRemovedSoon saveCatalogListener = new SaveCatalogActionToBeRemovedSoon(logicClass);
         LoadCatalogAction loadCatalogListener = new LoadCatalogAction(logicClass, catalogframe);
-        makeItem = new JButton("Catalog Manager");
+        catalogManager = new JButton("Catalog Manager");
         saveCatalog = new JButton("Save Catalog");
         loadCatalog = new JButton("Load Catalog");
-        makeItem.addActionListener(makeNewItemButtonListener);
+        catalogManager.addActionListener(itemManagerListener);
         saveCatalog.addActionListener(saveCatalogListener);
         loadCatalog.addActionListener(loadCatalogListener);
     }
