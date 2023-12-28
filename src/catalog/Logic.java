@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Logic {
-    // TODO
-    // have to fix the fact the makeItemObject method only makes the last line of the scanner, have to make it iterate through everything somehow.
     private final List addedItems = new ArrayList<String>();
     private final List<CatalogItem> items = new ArrayList<>();
     private ItemManagerFrontend itemManagerFrontendClass = new ItemManagerFrontend(this);
