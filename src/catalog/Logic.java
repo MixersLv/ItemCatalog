@@ -1,5 +1,6 @@
 package catalog;
 
+import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +15,9 @@ public class Logic {
     // have to fix the fact the makeItemObject method only makes the last line of the scanner, have to make it iterate through everything somehow.
     private final List addedItems = new ArrayList<String>();
     private final List<CatalogItem> items = new ArrayList<>();
+    private ItemManagerFrontend itemManagerFrontendClass = new ItemManagerFrontend(this);
     private Scanner scanner;
+    private String finalProductProperties;
 
     public void run() throws IOException {
         makeSaveFile();
@@ -62,6 +65,19 @@ public class Logic {
 
         CatalogItem newItem = new CatalogItem(itemName, itemType, itemPrice);
         items.add(newItem);
+    }
+    public void takeItemProperties(){
+        String currentItemName = itemManagerFrontendClass.getNameTextField().getText();
+        String currentItemType = itemManagerFrontendClass.getTypeTextField().getText();
+        String currentItemPrice = itemManagerFrontendClass.getPriceTextField().getText();
+
+        finalProductProperties = currentItemName + "." + currentItemType + "=" + currentItemPrice;
+    }
+    public void addItemToList(){
+        addedItems.add(finalProductProperties);
+    }
+    public void testMethod(){
+        System.out.println("Works");
     }
     public void deleteItem(){
         System.out.println("DELETE YOURSELF INSTEAD!");

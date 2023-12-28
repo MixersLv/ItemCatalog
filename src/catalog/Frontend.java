@@ -16,9 +16,11 @@ public class Frontend {
     private JButton saveItemButton;
     private JButton deleteItemButton;
     private final Logic logicClass;
+    private final ItemManagerFrontend itemManagerFrontend;
 
-    public Frontend(Logic logicClass) {
-    this.logicClass = logicClass;
+    public Frontend(Logic logicClass, ItemManagerFrontend itemManagerFrontend) {
+        this.logicClass = logicClass;
+        this.itemManagerFrontend = itemManagerFrontend;
     }
 
     public void makeFrame() {
@@ -42,7 +44,7 @@ public class Frontend {
         catalogframe.setBackground(Color.gray);
         catalogframe.setLayout(new BoxLayout(catalogframe.getContentPane(), BoxLayout.Y_AXIS));
     }
-
+    //should be just a method that calls this but the whole thing should be in itemManagerFrontend Class
     public void makeCatalogManagerFrame(){
         itemGUI = new JFrame();
         itemGUI.setSize(400,200);
@@ -52,12 +54,13 @@ public class Frontend {
         itemGUI.setLayout(new FlowLayout());
         makeCatalogManagerButtons();
     }
+    //This whole thing should probably me moved to the ItemManagerFrontend Class
     public void makeCatalogManagerButtons(){
         makeItemButton = new JButton("Make Item");
         saveItemButton = new JButton("Save Item");
         deleteItemButton = new JButton("Delete item");
         //Make listener object for each button
-        MakeItemAction makeItemListener = new MakeItemAction(logicClass);
+        MakeItemAction makeItemListener = new MakeItemAction(logicClass,itemManagerFrontend);
         SaveItemAction saveItemListener =new SaveItemAction(logicClass,this);
         DeleteItemAction deleteItemListener = new DeleteItemAction(logicClass,this);
         //add acion listener to each button
@@ -69,6 +72,7 @@ public class Frontend {
         itemGUI.add(saveItemButton);
         itemGUI.add(deleteItemButton);
     }
+    //this should be moved too
     public void initItemManager(){
         itemGUI.setVisible(true);
     }
