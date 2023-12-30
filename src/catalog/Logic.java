@@ -11,14 +11,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Logic {
-    // TODO
-    // have to fix the fact the makeItemObject method only makes the last line of the scanner, have to make it iterate through everything somehow.
     private final List addedItems = new ArrayList<String>();
     private final List<CatalogItem> items = new ArrayList<>();
-    private ItemManagerFrontend itemManagerFrontendClass = new ItemManagerFrontend(this);
+    private ItemManagerFrontend itemManagerFrontendClass;
     private Scanner scanner;
     private String finalProductProperties;
-
+    //SETTER
+    public void setItemManagerFrontendClass(ItemManagerFrontend itemManagerFrontendClass){
+        this.itemManagerFrontendClass = itemManagerFrontendClass;
+    }
+    //METHODS
     public void run() throws IOException {
         makeSaveFile();
         readCatalog();
@@ -30,16 +32,6 @@ public class Logic {
         }
         //DO NOTHING
     }
-    // Name, type, price
-
-    public void makeItem() {
-        Scanner userinput = new Scanner(System.in);
-        System.out.println("Enter the properties for the item: ");
-        String itemProperties = userinput.nextLine();
-        addedItems.add(itemProperties);
-        System.out.println("Item was added to the list!");
-    }
-
     public void saveCatalog() throws IOException {
         for (int i = 0; i < addedItems.size(); i++) {
             BufferedWriter writer = new BufferedWriter(new FileWriter("./catalog.txt", true));
@@ -75,6 +67,7 @@ public class Logic {
     }
     public void addItemToList(){
         addedItems.add(finalProductProperties);
+        System.out.println("Item has been added to the list\nDont forget to save!");
     }
     public void testMethod(){
         System.out.println("Works");
@@ -82,7 +75,10 @@ public class Logic {
     public void deleteItem(){
         System.out.println("DELETE YOURSELF INSTEAD!");
     }
+
+    //GETTERS
     public List<CatalogItem> getItems() {
         return items;
     }
+
 }

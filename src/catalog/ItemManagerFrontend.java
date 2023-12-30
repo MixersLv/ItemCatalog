@@ -26,6 +26,7 @@ public class ItemManagerFrontend {
         makeItemFrame.setLayout(null);
         makeTextFields();
         makeMakeItemButtons();
+        makeMakeItemText();
     }
     public void makeTextFields(){
         nameTextField = new JTextField();
@@ -55,6 +56,33 @@ public class ItemManagerFrontend {
         addItemButton.setBounds(235,150,100,50);
 
         makeItemFrame.add(addItemButton);
+    }
+
+    private void makeMakeItemText(){
+      JTextArea itemNameText = new JTextArea("Item Name");
+      JTextArea itemTypeText = new JTextArea("Item Type");
+      JTextArea itemPriceText = new JTextArea("Item Price");
+
+      itemNameText.setEditable(false);
+      itemTypeText.setEditable(false);
+      itemPriceText.setEditable(false);
+
+      itemNameText.setFocusable(false);
+      itemTypeText.setFocusable(false);
+      itemPriceText.setFocusable(false);
+
+      itemNameText.setFont(new Font("Consolas", Font.BOLD,20));
+      itemTypeText.setFont(new Font("Consolas", Font.BOLD,20));
+      itemPriceText.setFont(new Font("Consolas", Font.BOLD,20));
+
+      itemNameText.setBounds(35,20,120,20);
+      itemTypeText.setBounds(235,20,120,20);
+      itemPriceText.setBounds(405,20,120,20);
+
+      makeItemFrame.add(itemNameText);
+      makeItemFrame.add(itemTypeText);
+      makeItemFrame.add(itemPriceText);
+
     }
     public void initMakeItemFrame(){
         makeItemFrame.setVisible(true);
