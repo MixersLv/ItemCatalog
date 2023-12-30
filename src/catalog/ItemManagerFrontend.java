@@ -28,7 +28,7 @@ public class ItemManagerFrontend {
         makeMakeItemButtons();
         makeMakeItemText();
     }
-    public void makeTextFields(){
+    private void makeTextFields(){
         nameTextField = new JTextField();
         typeTextField = new JTextField();
         priceTextField = new JTextField();
@@ -46,7 +46,7 @@ public class ItemManagerFrontend {
         makeItemFrame.add(priceTextField);
     }
 
-    public void makeMakeItemButtons(){
+    private void makeMakeItemButtons(){
         addItemButton = new JButton("Add Item");
         //make AL
         AddItemAction addItemListener = new AddItemAction(logicClass,this);

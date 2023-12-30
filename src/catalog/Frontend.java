@@ -54,7 +54,7 @@ public class Frontend {
         itemGUI.setLayout(new FlowLayout());
         makeCatalogManagerButtons();
     }
-    //This whole thing should probably me moved to the ItemManagerFrontend Class
+    //This whole thing should probably be moved to the ItemManagerFrontend Class
     public void makeCatalogManagerButtons(){
         makeItemButton = new JButton("Make Item");
         saveItemButton = new JButton("Save Item");
