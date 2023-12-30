@@ -58,6 +58,7 @@ public class Logic {
         CatalogItem newItem = new CatalogItem(itemName, itemType, itemPrice);
         items.add(newItem);
     }
+
     public void takeItemProperties(){
         String currentItemName = itemManagerFrontendClass.getNameTextField().getText();
         String currentItemType = itemManagerFrontendClass.getTypeTextField().getText();
@@ -65,10 +66,12 @@ public class Logic {
 
         finalProductProperties = currentItemName + "." + currentItemType + "=" + currentItemPrice;
     }
+
     public void addItemToList(){
         addedItems.add(finalProductProperties);
         System.out.println("Item has been added to the list\nDont forget to save!");
     }
+
     public void testMethod(){
         System.out.println("Works");
     }

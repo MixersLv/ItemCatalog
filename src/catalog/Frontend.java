@@ -9,7 +9,6 @@ public class Frontend {
     private JFrame frame;
     private JFrame catalogframe;
     private JButton catalogManager;
-    private JButton saveCatalog;
     private JButton loadCatalog;
     private JFrame itemGUI;
     private JButton makeItemButton;
@@ -31,7 +30,6 @@ public class Frontend {
         frame.setResizable(false);
         frame.setLayout(new GridLayout(1, 1, 1, 1));
         frame.add(catalogManager);
-        frame.add(saveCatalog);
         frame.add(loadCatalog);
         frame.setVisible(true);
     }
@@ -79,13 +77,10 @@ public class Frontend {
 
     public void makeButtons() {
         ItemManagerAction itemManagerListener = new ItemManagerAction(this);
-        SaveCatalogActionToBeRemovedSoon saveCatalogListener = new SaveCatalogActionToBeRemovedSoon(logicClass);
         LoadCatalogAction loadCatalogListener = new LoadCatalogAction(logicClass, catalogframe);
         catalogManager = new JButton("Catalog Manager");
-        saveCatalog = new JButton("Save Catalog");
         loadCatalog = new JButton("Load Catalog");
         catalogManager.addActionListener(itemManagerListener);
-        saveCatalog.addActionListener(saveCatalogListener);
         loadCatalog.addActionListener(loadCatalogListener);
     }
 }

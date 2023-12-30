@@ -88,10 +88,8 @@ public class ItemManagerFrontend {
         makeItemFrame.setVisible(true);
     }
     public void closeMakeItemFrame(){
-        makeItemFrame.getDefaultCloseOperation();
+        makeItemFrame.setVisible(false);
     }
-
-
 
     //GETTERS
     public JTextField getNameTextField() {
