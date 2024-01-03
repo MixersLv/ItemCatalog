@@ -16,10 +16,12 @@ public class Frontend {
     private JButton deleteItemButton;
     private final Logic logicClass;
     private final ItemManagerFrontend itemManagerFrontend;
+    private ItemDeleteFrontend itemDeleteFrontendClass;
 
-    public Frontend(Logic logicClass, ItemManagerFrontend itemManagerFrontend) {
+    public Frontend(Logic logicClass, ItemManagerFrontend itemManagerFrontend, ItemDeleteFrontend itemDeleteFrontendClass) {
         this.logicClass = logicClass;
         this.itemManagerFrontend = itemManagerFrontend;
+        this.itemDeleteFrontendClass = itemDeleteFrontendClass;
     }
 
     public void makeFrame() {
@@ -60,7 +62,7 @@ public class Frontend {
         //Make listener object for each button
         MakeItemAction makeItemListener = new MakeItemAction(logicClass,itemManagerFrontend);
         SaveItemAction saveItemListener =new SaveItemAction(logicClass,this);
-        DeleteItemAction deleteItemListener = new DeleteItemAction(logicClass,this);
+        DeleteItemAction deleteItemListener = new DeleteItemAction(logicClass,this, itemDeleteFrontendClass);
         //add acion listener to each button
         makeItemButton.addActionListener(makeItemListener);
         saveItemButton.addActionListener(saveItemListener);

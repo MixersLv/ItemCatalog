@@ -10,11 +10,12 @@ import java.awt.event.ActionListener;
 public class DeleteItemAction implements ActionListener {
     private Logic logicClass;
     private final Frontend frontendClass;
-    private ItemDeleteFrontend itemDeleteFrontendClass = new ItemDeleteFrontend(logicClass);
+    private ItemDeleteFrontend itemDeleteFrontendClass;
 
-    public DeleteItemAction(Logic logicClass, Frontend frontendClass) {
+    public DeleteItemAction(Logic logicClass, Frontend frontendClass, ItemDeleteFrontend itemDeleteFrontendClass) {
         this.logicClass = logicClass;
         this.frontendClass = frontendClass;
+        this.itemDeleteFrontendClass = itemDeleteFrontendClass;
     }
 
     @Override

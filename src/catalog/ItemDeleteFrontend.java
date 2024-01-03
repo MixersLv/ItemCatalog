@@ -31,7 +31,6 @@ public class ItemDeleteFrontend {
             CatalogItem currentItem = logicClass.getItems().get(i);
             makeDeleteItems(currentItem);
         }
-
     }
 
     private void makeDeleteItems(CatalogItem currentItem){
@@ -57,6 +56,5 @@ public class ItemDeleteFrontend {
     public void initDeleteItemFrame(){
         deleteItemFrame.setVisible(true);
     }
-
 
 }
