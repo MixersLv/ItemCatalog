@@ -20,7 +20,6 @@ public class ItemManagerFrontend {
 
     public void makeMakeItemFrame(){
         makeItemFrame = new JFrame("Make Item");
-        makeItemFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         makeItemFrame.setSize(600,400);
         makeItemFrame.setLocationRelativeTo(null);
         makeItemFrame.setLayout(null);

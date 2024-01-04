@@ -5,6 +5,10 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        Object o = new Object();
+
+
+
         Logic logic = new Logic();
         ItemManagerFrontend itemManagerFrontend = new ItemManagerFrontend(logic);
         ItemDeleteFrontend itemDeleteFrontend = new ItemDeleteFrontend(logic);

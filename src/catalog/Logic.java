@@ -1,6 +1,5 @@
 package catalog;
 
-import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,11 +10,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Logic {
-    private final List addedItems = new ArrayList<String>();
     private final List<CatalogItem> items = new ArrayList<>();
     private ItemManagerFrontend itemManagerFrontendClass;
     private Scanner scanner;
-    private String finalProductProperties;
     //SETTER
     public void setItemManagerFrontendClass(ItemManagerFrontend itemManagerFrontendClass){
         this.itemManagerFrontendClass = itemManagerFrontendClass;
@@ -27,18 +24,18 @@ public class Logic {
     }
 
     public void makeSaveFile() throws IOException {
-        if (Files.notExists(Path.of("./catalog.txt"))) {
-            Files.createFile(Path.of("./catalog.txt"));
+        Path path = Path.of("./catalog.txt");
+        if (Files.notExists(path)) {
+            Files.createFile(path);
         }
         //DO NOTHING
     }
     public void saveCatalog() throws IOException {
-        for (int i = 0; i < addedItems.size(); i++) {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("./catalog.txt", true));
-            writer.write(addedItems.get(i) + "\n");
-            writer.close();
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./catalog.txt"));
+        for (int i = 0; i < items.size(); i++) {
+            writer.write(items.get(i) + "\n");
         }
-        addedItems.clear();
+        writer.close();
         System.out.println("All changes were saved!");
     }
 
@@ -59,24 +56,13 @@ public class Logic {
         items.add(newItem);
     }
 
-    public void takeItemProperties(){
+    public void saveItemProperties(){
         String currentItemName = itemManagerFrontendClass.getNameTextField().getText();
         String currentItemType = itemManagerFrontendClass.getTypeTextField().getText();
         String currentItemPrice = itemManagerFrontendClass.getPriceTextField().getText();
 
-        finalProductProperties = currentItemName + "." + currentItemType + "=" + currentItemPrice;
-    }
-
-    public void addItemToList(){
-        addedItems.add(finalProductProperties);
+        items.add(new CatalogItem(currentItemName, currentItemType, currentItemPrice));
         System.out.println("Item has been added to the list\nDont forget to save!");
-    }
-
-    public void testMethod(){
-        System.out.println("Works");
-    }
-    public void deleteItem(){
-        System.out.println("DELETE YOURSELF INSTEAD!");
     }
 
     //GETTERS

@@ -39,7 +39,6 @@ public class Frontend {
     public void makeCatalogFrame() {
         catalogframe = new JFrame();
         catalogframe.setTitle("Item Catalog");
-        catalogframe.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         catalogframe.setSize(300, 600);
         catalogframe.setBackground(Color.gray);
         catalogframe.setLayout(new BoxLayout(catalogframe.getContentPane(), BoxLayout.Y_AXIS));
@@ -48,7 +47,6 @@ public class Frontend {
     public void makeCatalogManagerFrame(){
         itemGUI = new JFrame();
         itemGUI.setSize(400,200);
-        itemGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         itemGUI.setTitle("Catalog Manager");
         itemGUI.setLocationRelativeTo(null);
         itemGUI.setLayout(new FlowLayout());
@@ -57,7 +55,7 @@ public class Frontend {
     //This whole thing should probably be moved to the ItemManagerFrontend Class
     public void makeCatalogManagerButtons(){
         makeItemButton = new JButton("Make Item");
-        saveItemButton = new JButton("Save Item");
+        saveItemButton = new JButton("Save");
         deleteItemButton = new JButton("Delete item");
         //Make listener object for each button
         MakeItemAction makeItemListener = new MakeItemAction(logicClass,itemManagerFrontend);

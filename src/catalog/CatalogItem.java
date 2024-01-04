@@ -22,4 +22,9 @@ public class CatalogItem {
     public String getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return getName() + '.' + getType() + '=' + getPrice();
+    }
 }
