@@ -4,6 +4,7 @@ import catalog.CatalogItem;
 import catalog.Logic;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class DeleteButtonAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //add a confirm delete function
         logic.getItems().remove(currentItem);
         deleteItemFrame.remove(currentItemPanel);
         //maybe need to refresh the catalog again aswell, but it works
