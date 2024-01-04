@@ -41,7 +41,7 @@ public class ItemDeleteFrontend {
             currentItemPanel.add(currentItemPrice);
             //DELETE BUTTON
             JButton deleteButton = new JButton("Delete");
-            deleteButton.addActionListener(new DeleteButtonAction(currentItem,logicClass));
+            deleteButton.addActionListener(new DeleteButtonAction(currentItem,logicClass, deleteItemFrame, currentItemPanel));
             currentItemPanel.add(deleteButton);
             deleteItemFrame.add(currentItemPanel);
     }
