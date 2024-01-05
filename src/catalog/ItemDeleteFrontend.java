@@ -1,10 +1,10 @@
 package catalog;
 
 import catalog.listeners.DeleteButtonAction;
-import catalog.listeners.DeleteConfirmAction;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ItemDeleteFrontend {
 
@@ -43,12 +43,12 @@ public class ItemDeleteFrontend {
             currentItemPanel.add(currentItemPrice);
             //DELETE BUTTON
             JButton deleteButton = new JButton("Delete");
-            deleteButton.addActionListener(new DeleteButtonAction(currentItem,logicClass, deleteItemFrame, currentItemPanel));
+            deleteButton.addActionListener(new DeleteButtonAction(currentItem,logicClass, deleteItemFrame, currentItemPanel, this));
             currentItemPanel.add(deleteButton);
             deleteItemFrame.add(currentItemPanel);
     }
 
-    private void confirmDelete(){
+    public void confirmDelete(){
         JFrame confirmFrame = new JFrame("Confirm delete");
         confirmFrame.setSize(200,100);
         confirmFrame.setLayout(new FlowLayout());
@@ -56,12 +56,11 @@ public class ItemDeleteFrontend {
         JButton confirmDeleteButton = new JButton("YES");
         JButton denyDeleteButton = new JButton("NO");
 
-        DeleteConfirmAction deleteConfirmListener = new DeleteConfirmAction(this);
+        confirmDeleteButton.addActionListener();
+        denyDeleteButton.addActionListener();
 
         confirmFrame.add(confirmDeleteButton);
         confirmFrame.add(denyDeleteButton);
-
-
 
         confirmFrame.setVisible(true);
     }
