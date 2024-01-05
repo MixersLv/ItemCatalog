@@ -1,9 +1,4 @@
-toyota.car=100
-cheese.food=10
-car.toy=10
 lol.word=100
 poop.fecies=1
-sex.lol=10
-bruh.bruh=9
 dsfdsf.fsdfdfds=2
 sui.dang=20
