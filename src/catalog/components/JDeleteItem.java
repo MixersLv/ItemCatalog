@@ -1,6 +1,6 @@
 package catalog.components;
 
-import catalog.CatalogItem;
+import catalog.objects.CatalogItem;
 import catalog.Logic;
 import catalog.listeners.DeleteButtonAction;
 

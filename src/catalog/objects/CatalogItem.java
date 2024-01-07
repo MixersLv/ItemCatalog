@@ -1,4 +1,4 @@
-package catalog;
+package catalog.objects;
 
 public class CatalogItem {
     private final String type;

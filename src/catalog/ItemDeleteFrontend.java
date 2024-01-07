@@ -1,6 +1,7 @@
 package catalog;
 
 import catalog.components.JDeleteItem;
+import catalog.objects.CatalogItem;
 
 import javax.swing.*;
 
@@ -21,6 +22,7 @@ public class ItemDeleteFrontend {
 
     private void makeDeleteItemFrame() {
         deleteItemFrame = new JFrame("Item Delete GUI");
+        deleteItemFrame.setLocationRelativeTo(null);
         deleteItemFrame.setSize(200, 500);
         deleteItemFrame.setLayout(new BoxLayout(deleteItemFrame.getContentPane(), BoxLayout.Y_AXIS));
     }

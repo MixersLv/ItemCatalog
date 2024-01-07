@@ -1,7 +1,6 @@
 package catalog.listeners;
 
-import catalog.CatalogItem;
-import catalog.ItemDeleteFrontend;
+import catalog.objects.CatalogItem;
 import catalog.Logic;
 import catalog.components.JConfirmDialog;
 

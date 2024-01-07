@@ -27,8 +27,10 @@ public class Frontend {
     public void makeFrame() {
         makeButtons();
         frame = new JFrame();
+        frame.setTitle("Store");
         frame.setSize(500, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setLayout(new GridLayout(1, 1, 1, 1));
         frame.add(catalogManager);
@@ -39,6 +41,7 @@ public class Frontend {
     public void makeCatalogFrame() {
         catalogframe = new JFrame();
         catalogframe.setTitle("Item Catalog");
+        catalogframe.setLocationRelativeTo(null);
         catalogframe.setSize(300, 600);
         catalogframe.setBackground(Color.gray);
         catalogframe.setLayout(new BoxLayout(catalogframe.getContentPane(), BoxLayout.Y_AXIS));
