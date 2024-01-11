@@ -82,8 +82,9 @@ public class Frontend {
         ItemManagerAction itemManagerListener = new ItemManagerAction(this);
         LoadCatalogAction loadCatalogListener = new LoadCatalogAction(logicClass, catalogframe);
         catalogManager = new JButton("Catalog Manager");
-        loadCatalog = new JButton("Load Catalog");
+        loadCatalog = new JButton("Catalog");
         catalogManager.addActionListener(itemManagerListener);
         loadCatalog.addActionListener(loadCatalogListener);
     }
+
 }

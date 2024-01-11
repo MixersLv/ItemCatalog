@@ -38,7 +38,7 @@ public class LoadCatalogAction implements ActionListener {
     }
 
     public void makeItemObject(CatalogItem item) {
-        JCatalogItem curItem = new JCatalogItem(item); // makes a new JCatalog item that has all the prompts in it
+        JCatalogItem curItem = new JCatalogItem(item, logicClass); // makes a new JCatalog item that has all the prompts in it
         catalog.add(curItem.getCurrentObjectPanel()); // adds the newly made item using a getter
     }
 }

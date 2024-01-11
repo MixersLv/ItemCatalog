@@ -1,5 +1,6 @@
 package catalog;
 
+import catalog.components.JCatalogItem;
 import catalog.objects.CatalogItem;
 
 import java.io.BufferedWriter;
@@ -15,6 +16,7 @@ public class Logic {
     private final List<CatalogItem> items = new ArrayList<>();
     private ItemManagerFrontend itemManagerFrontendClass;
     private Scanner scanner;
+    private final List<CatalogItem> itemCart = new ArrayList<>();
     //SETTER
     public void setItemManagerFrontendClass(ItemManagerFrontend itemManagerFrontendClass){
         this.itemManagerFrontendClass = itemManagerFrontendClass;
@@ -65,6 +67,15 @@ public class Logic {
 
         items.add(new CatalogItem(currentItemName, currentItemType, currentItemPrice));
         System.out.println("Item has been added to the list\nDont forget to save!");
+    }
+
+    public void addItemToCart(JCatalogItem currentItem){ // adds current passed in item from JCatalogItem and adds it to itemCart list while making a new CatalogItem
+        itemCart.add(new CatalogItem(currentItem.getStrname(),currentItem.getStrtype(),currentItem.getStrprice()));
+    }
+    public void testCart(){
+        for (int i = 0; i < itemCart.size(); i++) {
+            System.out.println(itemCart.get(i) + " | " +itemCart.get(i).hashCode());
+        }
     }
 
     //GETTERS

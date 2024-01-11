@@ -1,4 +1,5 @@
-lol.word=100
-dsfdsf.fsdfdfds=2
-wow.s=2
-fefe.qeqfeqwf=343
+snickers.food=3
+coca cola.drink=2
+hotwheels.toy=5
+cheese.food=2
+;saursliežudzelzsceļš.traintrack=10000000

@@ -26,7 +26,6 @@ public class DeleteButtonAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JConfirmDialog dialog = new JConfirmDialog("Do you want to delete this item?", () -> {
-            //add a confirm delete function
             logic.getItems().remove(currentItem);
             deleteItemFrame.remove(currentItemPanel);
             deleteItemFrame.repaint();
