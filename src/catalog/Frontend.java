@@ -17,6 +17,7 @@ public class Frontend {
     private final Logic logicClass;
     private final ItemManagerFrontend itemManagerFrontend;
     private ItemDeleteFrontend itemDeleteFrontendClass;
+    private JButton cartButton;
 
     public Frontend(Logic logicClass, ItemManagerFrontend itemManagerFrontend, ItemDeleteFrontend itemDeleteFrontendClass) {
         this.logicClass = logicClass;
@@ -45,6 +46,7 @@ public class Frontend {
         catalogframe.setSize(300, 600);
         catalogframe.setBackground(Color.gray);
         catalogframe.setLayout(new BoxLayout(catalogframe.getContentPane(), BoxLayout.Y_AXIS));
+        makeCartButton();
     }
     //should be just a method that calls this but the whole thing should be in itemManagerFrontend Class
     public void makeCatalogManagerFrame(){
@@ -85,6 +87,12 @@ public class Frontend {
         loadCatalog = new JButton("Catalog");
         catalogManager.addActionListener(itemManagerListener);
         loadCatalog.addActionListener(loadCatalogListener);
+    }
+    public void makeCartButton(){
+        cartButton = new JButton("Cart");
+        CartAction cartListener = new CartAction(this, logicClass);
+        cartButton.addActionListener(cartListener);
+        catalogframe.add(cartButton);
     }
 
 }
